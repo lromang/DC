@@ -48,6 +48,7 @@ data_usr <- data.frame(requester = requester,
                        id_org = org_usr,
                        email = email)
 
+write.csv(data_usr, "usr.csv", row.names = FALSE)
 ##############################
 ## structure satisfaction
 ##############################
@@ -76,6 +77,7 @@ data_sat <- data.frame(requester = sat_requester,
                       comment = comment,
                       date = date)
 
+write.csv(data_sat, "sat.csv", row.names = FALSE)
 ##############################
 ## structure org
 ##############################
@@ -98,6 +100,7 @@ data_org <- data.frame(id_org = id_org,
                       org_s_name = org_s_name,
                       org_name = org_name)
 
+write.csv(data_org, "org.csv", row.names = FALSE)
 ##############################
 ## structure ticket
 ##############################
