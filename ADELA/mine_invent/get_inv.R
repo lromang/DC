@@ -27,7 +27,8 @@ suppressPackageStartupMessages(library(foreign))
 ## ---------------------------------
 ## Read in data
 ## ---------------------------------
-data <- read.csv("../../DGM/MAT.csv", stringsAsFactors = FALSE)
+data <- read.csv("/home/luis/Documents/Presidencia/bomberazos/create_dataset/MAT.csv",
+                stringsAsFactors = FALSE)
 
 ## ---------------------------------
 ## Filter inventories
@@ -93,19 +94,23 @@ for(i in 1:length(urls)){
                                       "tringido")]
     }
     ## Build data frame for dep
-    d_class_inv <- data.frame(dep = inventories$dep[i],
-                         rec_pub  = rec_pub,
-                         rec_priv = rec_priv,
-                         rec_res  = rec_res
+    d_class_inv <- data.frame(
+        slug = inventories$slug[i],
+        dep = inventories$dep[i],
+        rec_pub  = rec_pub,
+        rec_priv = rec_priv,
+        rec_res  = rec_res
                          )
     ## Build general data frame
     all_inv <- rbind(all_inv, d_class_inv)
     }else{
-        d_class_inv <- data.frame(dep = inventories$dep[i],
-                                 rec_pub  = NA,
-                                 rec_priv = NA,
-                                 rec_res  = NA
-                                 )
+        d_class_inv <- data.frame(
+            slug = inventories$slug[i],
+            dep = inventories$dep[i],
+            rec_pub  = NA,
+            rec_priv = NA,
+            rec_res  = NA
+        )
         all_inv <- rbind(all_inv, d_class_inv)
     }
 }
