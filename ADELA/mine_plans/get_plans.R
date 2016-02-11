@@ -27,3 +27,5 @@ plan <- fromJSON(getURL(inst[i]))
 }
 
 write.csv(all_plans, "plans.csv", row.names = FALSE)
+
+system("rm *.txt")
